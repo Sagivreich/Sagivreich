@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class MovieDriver {
+
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+        String result;
+        Scanner input = new Scanner(System.in);
+        
+        do
+        {
+        Movie movie = new Movie();
+
+
+        System.out.println("Please put the title of the movie:");
+
+        movie.setTitle(input.nextLine());
+
+        System.out.println("Please enter the movie rating:");
+
+        movie.setRating(input.nextLine());
+
+        System.out.println("Please enter the amount of tickets sold at the theatre you went to");
+
+        movie.setSoldTickets(input.nextInt());
+
+        System.out.println(movie.toString());
+        
+        input.nextLine();
+
+        System.out.println("Do you want to enter another movie? (yes or no)");
+       
+        result = input.nextLine();
+        System.out.println("");
+
+
+    } while(result.equalsIgnoreCase("yes"));
+        
+        System.out.println("Goodbye User");
+    }
+    }
