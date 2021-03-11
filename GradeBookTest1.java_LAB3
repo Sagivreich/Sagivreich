@@ -1,0 +1,73 @@
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+public class GradeBookTest1 {
+	
+	 GradeBook Arrey1;
+	 GradeBook Arrey2;
+	
+	
+	@Before
+	public void setUp() throws Exception {
+	
+		  
+		   Arrey1= new GradeBook(5);
+		   Arrey2 = new GradeBook (5);
+		   
+		   Arrey1.addScore(40);
+		   Arrey1.addScore(65);
+
+		   Arrey2.addScore(80.0);
+		   Arrey2.addScore(20.0);
+		   Arrey2.addScore(13.0);
+		   Arrey2.addScore(35.0);
+		   
+		  
+
+		
+	}
+
+	
+	
+	@After
+	public void tearDown() throws Exception {
+	
+
+	   	Arrey1 = null;
+	   	Arrey2 = null;
+
+		
+	}
+
+	@Test
+	public void sampleGetScoreTest() {
+
+
+	    assertEquals(2, Arrey1.getscoresSize(), 0.1);
+	    assertEquals(4, Arrey2.getscoresSize(), 0.1);
+
+		
+	}
+
+	@Test
+	public void sampleSumTest() {
+	
+	    assertEquals(105.0, Arrey1.sum(), 0.1);
+	    assertEquals(148.0, Arrey2.sum(), 0.1);
+
+	
+	}
+	@Test
+	public void sampleMinimumTest() {
+	
+		
+	    assertEquals(40.0, Arrey1.minimum(), 0.1);
+	    assertEquals(13.0, Arrey2.minimum(), 0.1);
+
+	
+	}
+
+}
